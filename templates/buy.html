@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        
+        
+        <div>
+           <h5>Available cash: <b>${{'%0.2f'| format(unallocated[0].get('cash'))}}</b></h5> 
+        </div>
+        <br>
+        
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="text">
+        </div>
+         
+        <div>
+            <button class="btn btn-primary" type="submit">Open position</button>
+        </div>
+        
+    </form>
+{% endblock %}

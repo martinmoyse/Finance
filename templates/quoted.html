@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>{{response.name}}</td>
+        <td>{{response.price}}</td>
+        <td>{{response.symbol}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form action="/quote" method="post">
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Get quote</button>
+</form>
+
+
+
+        
+{% endblock %}

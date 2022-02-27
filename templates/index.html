@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+      {% for i in range(length) %}
+
+        <tr>
+            <td>{{ keys[i] }}</td>
+            <td>{{ names[i] }}</td>
+            <td>{{ values[i] }}</td>
+            <td>${{ '%0.2f'| format(prices[i] )}}</td>
+            <td>${{'%0.2f'| format(prices[i] * values[i]|float)}}</td>
+
+
+        </tr>
+
+      {% endfor %}
+
+
+
+      <tr>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>${{ cash }}</td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>${{'%0.2f'| format(total)}}</b></td>
+      </tr>
+
+
+  </tbody>
+</table>
+
+{% endblock %}
